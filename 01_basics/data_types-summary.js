@@ -24,4 +24,23 @@ console.log("Hello")
 
 console.log(typeof(heros))
 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions 
+
+// ========================================
+
+
+// Types of memory (Stack and heap)
+
+//stack -> premative
+//heap -> non premative
+
+let youtubeName = "samridhrana"
+let anotherName = youtubeName
+
+console.log(anotherName)
+console.log(youtubeName)
+
+let user = {
+    email : "user@gmail.com",
+    upi: "upi@ybl"
+}
