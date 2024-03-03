@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code in Youtube</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+
+    <script>
+      function addLanguage(langName) {
+        const li = document.createElement("li");
+        li.textContent = langName; // Use textContent to set the text
+        document.querySelector(".language").appendChild(li);
+      }
+
+      addLanguage("Python");
+      addLanguage("TypeScript");
+      addLanguage("NextJS");
+
+
+      function addoptiLanguage(langName) {
+        const li = document.createElement("li");
+        li.textContent = langName;
+        document.querySelector('.language').appendChild(li); // Fixed typo here
+      }
+      
+      // Edit
+      const secondLang = document.querySelector("li:nth-child(2)"); // Corrected the selector
+      // secondLang.innerHTML = "Mojo"; // This line is commented out as it's not necessary anymore
+      const newLi = document.createElement("li"); // Corrected the variable name
+      newLi.textContent = "Mojo";
+      secondLang.replaceWith(newLi);
+
+      // edit 
+      const firstLang = document.querySelector("li:first-child");
+      firstLang.outerHTML = '<li>Java</li>'
+
+      // remove
+      const lastLang = document.querySelector('li:last-child');
+lastLang.remove();
+
+
+    </script>
+  </body>
+</html>
