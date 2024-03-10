@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Avatar Card</title>
+    <style>
+        .card {
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="githubCard">
+        <img id="avatar" src="" alt="Avatar">
+        <br>
+        <h2 id="totalRepo">repo</h2>
+    </div>
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/samridhrana06';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                const avatarUrl = data.avatar_url;
+                const repo = data.public_repos;
+                document.getElementById('avatar').src = avatarUrl;
+                document.getElementById('totalRepo').innerHTML = `Total repo ${repo}`;
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
